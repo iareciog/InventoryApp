@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Button insertDataButton = findViewById(R.id.button_insert_data);
         Button showDbButton = findViewById(R.id.button_show_db);
 
+        //Created a OnClickListener for insert the dummy data on the DB
         insertDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Created a OnClickListener for query the db if the app was closed
         showDbButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,21 +126,23 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase writableDb = mDbHelper.getWritableDatabase();
         displayView = findViewById(R.id.text_view);
 
-        String nameValue = "Joseph";
+        // assign values to every column for dummy data
+        String productNameValue = "Paper";
         int priceValue = 25;
         int quantityValue = 7;
         String supplierNameValue = "Josh";
         int supplierPhoneNumberValue = 2025550167;
 
+        // put the content to the DB
         ContentValues values = new ContentValues();
-        values.put(ProductEntry.COLUMN_PRODUCT_NAME, nameValue);
+        values.put(ProductEntry.COLUMN_PRODUCT_NAME, productNameValue);
         values.put(ProductEntry.COLUMN_PRODUCT_PRICE, priceValue);
         values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantityValue);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_NAME, supplierNameValue);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, supplierPhoneNumberValue);
 
         long newRowId = writableDb.insert(ProductEntry.TABLE_NAME, null, values);
-
+        // close the connection
         writableDb.close();
 
         if (newRowId == -1) {
