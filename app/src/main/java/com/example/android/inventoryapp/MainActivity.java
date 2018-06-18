@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 insertData();
+                queryData();
             }
         });
 
@@ -146,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Otherwise, the insertion was successful and we can display a toast with the row ID.
             Toast.makeText(this, "Product saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
-            displayView.setText(getString(R.string.added_data));
         }
     }
 }

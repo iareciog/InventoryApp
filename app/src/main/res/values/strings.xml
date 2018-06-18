@@ -4,5 +4,4 @@
     <string name="show_db">Show DB</string>
     <string name="this_table_contains">The products table contains</string>
     <string name="products" >products.</string>
-    <string name="added_data">Added Data to DB.</string>
 </resources>
