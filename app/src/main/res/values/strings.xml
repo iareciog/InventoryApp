@@ -3,5 +3,13 @@
     <string name="insert_data">Insert Dummy Data</string>
     <string name="show_db">Show DB</string>
     <string name="this_table_contains">The products table contains</string>
-    <string name="products" >products.</string>
+    <string name="products">products.</string>
+    <string name="empty_view_title_text">The Inventory is Empty</string>
+    <string name="empty_view_subtitle_text">There are no products</string>
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+    <string name="action_delete_all_entries">Delete all entries</string>
+    <string name="action_save">Save product</string>
+    <string name="action_delete">Delete product</string>
+    <string name="edit_product_title_new_product">Add a Product</string>
+    <string name="edit_product_title_edit_product">Edit a Product</string>
 </resources>
