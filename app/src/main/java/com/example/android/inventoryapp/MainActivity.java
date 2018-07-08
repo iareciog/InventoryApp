@@ -9,6 +9,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -48,6 +49,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 intent.setData(currentProductUri);
 
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton floatingActionButton = findViewById(R.id.floating_button);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EditProductActivity.class);
                 startActivity(intent);
             }
         });

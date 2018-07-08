@@ -2,4 +2,19 @@
 <resources>
     <dimen name="margin_button_insert_data">12dp</dimen>
     <dimen name="margin_button_query_data">46dp</dimen>
+    <dimen name="sub_category_text_size">18sp</dimen>
+    <dimen name="product_edit_view_text_size">15sp</dimen>
+
+    <dimen name="first_layout_margin_up_down">5dp</dimen>
+    <dimen name="first_layout_margin_left">8dp</dimen>
+    <dimen name="first_layout_margin_right">12dp</dimen>
+
+    <dimen name="floating_action_button_margin">15dp</dimen>
+
+    <dimen name="list_item_padding">16dp</dimen>
+
+    <dimen name="margin_bottom_relative_layout">8dp</dimen>
+    <dimen name="margin_left_linear_layout">15dp</dimen>
+
+    <dimen name="edit_text_padding_left">8dp</dimen>
 </resources>

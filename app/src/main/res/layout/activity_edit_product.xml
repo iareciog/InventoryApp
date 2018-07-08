@@ -3,10 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="5dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="12dp"
-    android:layout_marginTop="5dp"
+    style="@style/firstLinearLayoutStyle"
     android:orientation="vertical"
     tools:context=".EditProductActivity">
 
@@ -16,68 +13,58 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/subCategoryStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Product Info" />
+            android:text="@string/product_info_subcategory"
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="6dp"/>
 
         <LinearLayout
+            style="@style/subCategoryLinearLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="15dp"
             android:orientation="vertical">
 
             <RelativeLayout
+                style="@style/editActivityRelativeLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/product_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="productName" />
-
                 <EditText
+                    style="@style/productEditText"
                     android:id="@+id/edit_product_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/product_name" />
+                    android:hint="@string/product_name_hint" />
 
             </RelativeLayout>
 
             <RelativeLayout
+                style="@style/editActivityRelativeLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/product_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="price" />
-
                 <EditText
+                    style="@style/productEditText"
                     android:id="@+id/edit_product_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/product_price" />
+                    android:hint="@string/product_price_hint" />
 
             </RelativeLayout>
 
             <RelativeLayout
+                style="@style/editActivityRelativeLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/product_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="quantity" />
-
                 <EditText
+                    style="@style/productEditText"
                     android:id="@+id/edit_product_quantity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/product_quantity" />
+                    android:hint="@string/product_quantity_hint" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -88,53 +75,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
 
         <TextView
+            style="@style/subCategoryStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Suppier info" />
+            android:text="@string/supplier_info_subcategory"
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="6dp"/>
 
         <LinearLayout
+            style="@style/subCategoryLinearLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="15dp"
             android:orientation="vertical">
 
             <RelativeLayout
+                style="@style/editActivityRelativeLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/supplier_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="name" />
-
                 <EditText
+                    style="@style/productEditText"
                     android:id="@+id/edit_supplier_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/supplier_name" />
+                    android:hint="@string/supplier_name_hint" />
 
             </RelativeLayout>
 
             <RelativeLayout
+                style="@style/editActivityRelativeLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/supplier_phone_textview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PhoneNumber" />
-
                 <EditText
+                    style="@style/productEditText"
                     android:id="@+id/edit_supplier_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/supplier_phone_textview" />
+                    android:hint="@string/supplier_phone_hint" />
 
             </RelativeLayout>
         </LinearLayout>

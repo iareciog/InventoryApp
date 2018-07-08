@@ -8,4 +8,29 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="firstLinearLayoutStyle">
+        <item name="android:layout_marginBottom">@dimen/first_layout_margin_up_down</item>
+        <item name="android:layout_marginLeft">@dimen/first_layout_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/first_layout_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/first_layout_margin_up_down</item>
+    </style>
+
+    <style name="editActivityRelativeLayoutStyle">
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_relative_layout</item>
+    </style>
+
+    <style name="subCategoryLinearLayoutStyle">
+        <item name="android:layout_marginLeft">@dimen/margin_left_linear_layout</item>
+    </style>
+
+    <style name="subCategoryStyle">
+        <item name="android:textSize">@dimen/sub_category_text_size</item>
+        <item name="android:textColor">@color/subCategoryColor</item>
+    </style>
+
+    <style name="productEditText">
+        <item name="android:textSize">@dimen/product_edit_view_text_size</item>
+        <item name="android:paddingLeft">@dimen/edit_text_padding_left</item>
+    </style>
+
 </resources>

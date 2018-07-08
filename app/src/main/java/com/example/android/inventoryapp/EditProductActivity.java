@@ -96,7 +96,8 @@ public class EditProductActivity extends AppCompatActivity implements
 
         if (mCurrentProductUri == null &&
                 TextUtils.isEmpty(productNameString) && TextUtils.isEmpty(productPriceString)) {
-
+            Toast.makeText(this, "The product need name and price",
+                    Toast.LENGTH_LONG).show();
             return;
         }
 
