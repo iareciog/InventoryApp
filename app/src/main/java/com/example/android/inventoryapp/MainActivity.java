@@ -120,7 +120,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         String[] projection = {
                 ProductEntry._ID,
                 ProductEntry.COLUMN_PRODUCT_NAME,
-                ProductEntry.COLUMN_PRODUCT_PRICE};
+                ProductEntry.COLUMN_PRODUCT_PRICE,
+                ProductEntry.COLUMN_PRODUCT_QUANTITY};
 
         return new CursorLoader(this,
                 ProductEntry.CONTENT_URI,
@@ -139,4 +140,16 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoaderReset(Loader<Cursor> loader) {
         mCursorAdapter.swapCursor(null);
     }
+
+    /*public void decreaseCount(Context context, int columnId, int quantity){
+
+        quantity = --quantity;
+
+        ContentValues values = new ContentValues();
+        values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);
+
+        Uri updateUri = ContentUris.withAppendedId(ProductEntry.CONTENT_URI, columnId);
+
+        int rowsAffected = context.getContentResolver().update(updateUri, values, null, null);
+    }*/
 }

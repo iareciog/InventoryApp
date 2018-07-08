@@ -25,4 +25,6 @@
 
     <string name="supplier_name_hint">Supplier Name</string>
     <string name="supplier_phone_hint">Supplier Phone</string>
+
+    <string name="default_quantity_value">0</string>
 </resources>

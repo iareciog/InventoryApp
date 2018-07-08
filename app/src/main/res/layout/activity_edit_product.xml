@@ -59,13 +59,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/quantityAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_action_add"
+                    android:layout_centerVertical="true"/>
+
                 <EditText
                     style="@style/productEditText"
                     android:id="@+id/edit_product_quantity"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/product_quantity_hint" />
+                    android:textAlignment="center"
+                    android:hint="@string/product_quantity_hint"
+                    android:text="@string/default_quantity_value"
+                    android:layout_toRightOf="@id/quantityAdd"
+                    android:layout_centerVertical="true"/>
 
+                <ImageView
+                    android:id="@+id/quantityReduce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/edit_product_quantity"
+                    android:src="@drawable/ic_remove"
+                    android:layout_centerVertical="true"/>
             </RelativeLayout>
         </LinearLayout>
 
@@ -120,5 +139,17 @@
 
             </RelativeLayout>
         </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/call_supplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Call the supplier"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

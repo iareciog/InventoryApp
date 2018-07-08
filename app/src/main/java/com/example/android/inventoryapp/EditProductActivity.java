@@ -18,7 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.android.inventoryapp.data.ProductContact.ProductEntry;
@@ -84,6 +86,60 @@ public class EditProductActivity extends AppCompatActivity implements
         mSupplierNameEditText.setOnTouchListener(mTouchListener);
         mSupplierPhoneEditText.setOnTouchListener(mTouchListener);
 
+
+        // A quantity Add and Reduce "buttons"
+        ImageView quantityAdd = findViewById(R.id.quantityAdd);
+        ImageView quantityReduce = findViewById(R.id.quantityReduce);
+
+        // quantity add onClickListener
+        quantityAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String quantityString = mProductQuantityEditText.getText().toString();
+                int quantity;
+
+                if (quantityString.equals("")){
+                    quantity = 0;
+                } else {
+                    quantity = Integer.parseInt(quantityString);
+                    quantity = ++quantity;
+                }
+
+                mProductQuantityEditText.setText(Integer.toString(quantity));
+            }
+        });
+
+        // quantity reduce onClickListener
+        quantityReduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String quantityString = mProductQuantityEditText.getText().toString();
+                int quantity;
+
+                if (quantityString.equals("") || Integer.parseInt(quantityString) < 1){
+                    quantity = 0;
+                } else {
+                    quantity = Integer.parseInt(quantityString);
+                    quantity = --quantity;
+                }
+
+                mProductQuantityEditText.setText(Integer.toString(quantity));
+            }
+        });
+
+        Button callSupplier = findViewById(R.id.call_supplier);
+        callSupplier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String supplierPhone = mSupplierPhoneEditText.getText().toString().trim();
+
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.fromParts("tel", supplierPhone, null));
+
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void saveProduct() {
@@ -105,13 +161,20 @@ public class EditProductActivity extends AppCompatActivity implements
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, productNameString);
         values.put(ProductEntry.COLUMN_PRODUCT_PRICE, productPriceString);
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_NAME, supplierNameString);
-        values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, supplierPhoneString);
 
+        //Check if productQuantity exists
         int quantity = 0;
         if(!TextUtils.isEmpty(productQuantityString)) {
             quantity = Integer.parseInt(productQuantityString);
         }
         values.put(ProductEntry.COLUMN_PRODUCT_QUANTITY, quantity);
+
+        //Check if supplierPhone exist and if a positive number
+        int supplierPhone = 0;
+        if(!TextUtils.isEmpty(supplierPhoneString) && Integer.parseInt(supplierNameString) >= 0) {
+            supplierPhone = Integer.parseInt(supplierNameString);
+        }
+        values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, supplierPhone);
 
         if (mCurrentProductUri == null) {
 
