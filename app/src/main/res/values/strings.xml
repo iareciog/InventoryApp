@@ -6,7 +6,7 @@
     <string name="products">products.</string>
 
     <string name="empty_view_title_text">The Inventory is Empty</string>
-    <string name="empty_view_subtitle_text">There are no products</string>
+    <string name="empty_view_subtitle_text">To add a product press the button</string>
 
     <string name="action_insert_dummy_data">Insert Dummy Data</string>
     <string name="action_delete_all_entries">Delete all entries</string>
@@ -22,6 +22,11 @@
     <string name="product_name_hint">Product Name</string>
     <string name="product_price_hint">Price</string>
     <string name="product_quantity_hint">Quantity</string>
+
+    <string name="product_and_supplier_name">Name:</string>
+    <string name="product_price">Price:</string>
+    <string name="product_quantity">Quantity:</string>
+    <string name="supplier_phone">Tlf:</string>
 
     <string name="supplier_name_hint">Supplier Name</string>
     <string name="supplier_phone_hint">Supplier Phone</string>

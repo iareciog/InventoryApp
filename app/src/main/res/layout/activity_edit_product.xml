@@ -31,12 +31,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_and_supplier_name"
+                    android:layout_centerVertical="true"/>
+
                 <EditText
                     style="@style/productEditText"
                     android:id="@+id/edit_product_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/product_name_hint" />
+                    android:hint="@string/product_name_hint"
+                    android:layout_toRightOf="@id/product_name"/>
 
             </RelativeLayout>
 
@@ -44,13 +52,21 @@
                 style="@style/editActivityRelativeLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_price"
+                    android:layout_centerVertical="true"/>
 
                 <EditText
                     style="@style/productEditText"
                     android:id="@+id/edit_product_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/product_price_hint" />
+                    android:hint="@string/product_price_hint"
+                    android:layout_toRightOf="@id/product_price" />
 
             </RelativeLayout>
 
@@ -59,12 +75,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/product_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_quantity"
+                    android:layout_centerVertical="true"
+                    />
+
                 <ImageView
                     android:id="@+id/quantityAdd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_action_add"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/product_quantity"/>
 
                 <EditText
                     style="@style/productEditText"
@@ -116,12 +141,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/support_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_and_supplier_name"
+                    android:layout_centerVertical="true"/>
+
                 <EditText
                     style="@style/productEditText"
                     android:id="@+id/edit_supplier_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/supplier_name_hint" />
+                    android:hint="@string/supplier_name_hint"
+                    android:layout_toRightOf="@id/support_name"/>
 
             </RelativeLayout>
 
@@ -130,12 +163,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/support_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/supplier_phone"
+                    android:layout_centerVertical="true"/>
+
                 <EditText
                     style="@style/productEditText"
                     android:id="@+id/edit_supplier_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/supplier_phone_hint" />
+                    android:hint="@string/supplier_phone_hint"
+                    android:layout_toRightOf="@id/support_phone"/>
 
             </RelativeLayout>
         </LinearLayout>
