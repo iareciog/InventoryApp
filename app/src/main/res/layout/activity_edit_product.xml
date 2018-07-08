@@ -188,7 +188,7 @@
                 android:id="@+id/call_supplier"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Call the supplier"
+                android:text="@string/call_the_supplier"
                 android:layout_centerInParent="true"/>
 
         </RelativeLayout>

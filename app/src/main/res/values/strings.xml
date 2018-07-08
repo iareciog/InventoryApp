@@ -26,10 +26,12 @@
     <string name="product_and_supplier_name">Name:</string>
     <string name="product_price">Price:</string>
     <string name="product_quantity">Quantity:</string>
-    <string name="supplier_phone">Tlf:</string>
+    <string name="supplier_phone">Phone:</string>
 
     <string name="supplier_name_hint">Supplier Name</string>
     <string name="supplier_phone_hint">Supplier Phone</string>
 
     <string name="default_quantity_value">0</string>
+
+    <string name="call_the_supplier">Call the supplier</string>
 </resources>
