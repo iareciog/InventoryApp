@@ -28,7 +28,7 @@ public class ProductContact {
     /**
      * Possible path (appended to base content URI for possible URI's)
      * For instance, content://com.example.android.inventoryapp/products/ is a valid path for
-     * looking at pet data.
+     * looking at product data.
      */
     public static final String PATH_PRODUCTS = "products";
 
@@ -45,7 +45,7 @@ public class ProductContact {
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_PRODUCTS;
 
         /**
-         * The MIME type of the {@link #CONTENT_URI} for a single pet.
+         * The MIME type of the {@link #CONTENT_URI} for a single product.
          */
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_PRODUCTS;

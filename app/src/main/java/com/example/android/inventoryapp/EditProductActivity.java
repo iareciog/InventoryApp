@@ -83,7 +83,7 @@ public class EditProductActivity extends AppCompatActivity implements
         } else {
             // set title to "Edit a product" because the product already exist
             setTitle(getString(R.string.edit_product_title_edit_product));
-            // Initialize a loader to read the pet data from the database
+            // Initialize a loader to read the product data from the database
             // and display the current values in the editor
             getLoaderManager().initLoader(EXISTING_PRODUCT_LOADER, null, this);
         }
@@ -206,8 +206,8 @@ public class EditProductActivity extends AppCompatActivity implements
 
         //Check if supplierPhone isn't empty and if the value are positive. And if is empty use 0 has value
         int supplierPhone = 0;
-        if(!TextUtils.isEmpty(supplierPhoneString) && Integer.parseInt(supplierNameString) >= 0) {
-            supplierPhone = Integer.parseInt(supplierNameString);
+        if(!TextUtils.isEmpty(supplierPhoneString) && Integer.parseInt(supplierPhoneString) >= 0) {
+            supplierPhone = Integer.parseInt(supplierPhoneString);
         }
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, supplierPhone);
 
@@ -228,9 +228,9 @@ public class EditProductActivity extends AppCompatActivity implements
                         Toast.LENGTH_SHORT).show();
             }
         } else {
-            // Otherwise this is an EXISTING pet, so update the pet with content URI: mCurrentPetUri
+            // Otherwise this is an EXISTING product, so update the product with content URI: mCurrentProductUri
             // and pass in the new ContentValues. Pass in null for the selection and selection args
-            // because mCurrentPetUri will already identify the correct row in the database that
+            // because mCurrentProductUri will already identify the correct row in the database that
             // we want to modify.
             int rowsAffected = getContentResolver().update(mCurrentProductUri, values, null, null);
 
@@ -262,7 +262,7 @@ public class EditProductActivity extends AppCompatActivity implements
     @Override
     public boolean onPrepareOptionsMenu(Menu menu){
         super.onPrepareOptionsMenu(menu);
-        // If this is a new pet, hide the "Delete" menu item.
+        // If this is a new product, hide the "Delete" menu item.
         if (mCurrentProductUri == null) {
             MenuItem menuItem = menu.findItem(R.id.action_delete);
             menuItem.setVisible(false);
@@ -276,7 +276,7 @@ public class EditProductActivity extends AppCompatActivity implements
         switch (item.getItemId()) {
             // Respond to a click on the "Save" menu option
             case R.id.action_save:
-                // Save pet to database
+                // Save product to database
                 saveProduct();
                 // Exit activity
                 finish();
@@ -442,7 +442,7 @@ public class EditProductActivity extends AppCompatActivity implements
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                // User clicked the "Delete" button, so delete the pet.
+                // User clicked the "Delete" button, so delete the product.
                 deleteProduct();
             }
         });
@@ -451,7 +451,7 @@ public class EditProductActivity extends AppCompatActivity implements
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 // User clicked the "Cancel" button, so dismiss the dialog
-                // and continue editing the pet.
+                // and continue editing the product.
                 if(dialogInterface != null) {
                     dialogInterface.dismiss();
                 }
@@ -465,14 +465,14 @@ public class EditProductActivity extends AppCompatActivity implements
 
 
     /**
-     * Perform the deletion of the pet in the database.
+     * Perform the deletion of the product in the database.
      */
     private void deleteProduct() {
 
         if (mCurrentProductUri != null) {
-            // Call the ContentResolver to delete the pet at the given content URI.
-            // Pass in null for the selection and selection args because the mCurrentPetUri
-            // content URI already identifies the pet that we want.
+            // Call the ContentResolver to delete the products at the given content URI.
+            // Pass in null for the selection and selection args because the mCurrentProductUri
+            // content URI already identifies the product that we want.
             int rowsDeleted = getContentResolver().delete(mCurrentProductUri, null, null);
 
             // Show a toast message depending on whether or not the delete was successful.
@@ -492,7 +492,7 @@ public class EditProductActivity extends AppCompatActivity implements
     }
 
     /**
-     * Helper method to delete all pets in the database.
+     * Helper method to delete all products in the database.
      */
     private void deleteAllProducts() {
         int rowsDeleted = getContentResolver().delete(ProductEntry.CONTENT_URI, null, null);

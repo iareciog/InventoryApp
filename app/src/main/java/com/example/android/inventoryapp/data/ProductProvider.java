@@ -19,7 +19,7 @@ public class ProductProvider extends ContentProvider {
     /** URI matcher code for the content URI for the product table */
     private static final int PRODUCTS = 100;
 
-    /** URI matcher code for the content URI for a single pet in the product table */
+    /** URI matcher code for the content URI for a single product in the product table */
     private static final int PRODUCT_ID = 101;
 
     /**
@@ -35,13 +35,13 @@ public class ProductProvider extends ContentProvider {
         // when a match is found.
 
         // The content URI of the form "content://com.example.android.inventoryapp/products" will map to the
-        // integer code {@link #PETS}. This URI is used to provide access to MULTIPLE rows
-        // of the pets table.
+        // integer code {@link #PRODUCTS}. This URI is used to provide access to MULTIPLE rows
+        // of the product table.
         sUriMatcher.addURI(ProductContact.CONTENT_AUTHORITY, ProductContact.PATH_PRODUCTS, PRODUCTS);
 
         // The content URI of the form "content://com.example.android.inventoryapp/products/#" will map to the
-        // integer code {@link #PET_ID}. This URI is used to provide access to ONE single row
-        // of the pets table.
+        // integer code {@link #PRODUCT_ID}. This URI is used to provide access to ONE single row
+        // of the products table.
         //
         // In this case, the "#" wildcard is used where "#" can be substituted for an integer.
         // For example, "content://com.example.android.inventoryapp/products/2" matches, but
@@ -71,14 +71,14 @@ public class ProductProvider extends ContentProvider {
         int match = sUriMatcher.match(uri);
         switch (match) {
             case PRODUCTS:
-                // For the PRODUCTS code, query the pets table directly with the given
+                // For the PRODUCTS code, query the products table directly with the given
                 // projection, selection, selection arguments, and sort order. The cursor
-                // could contain multiple rows of the pets table.
+                // could contain multiple rows of the products table.
                 cursor = db.query(ProductEntry.TABLE_NAME, projection, selection, selectionArgs,
                         null, null, sortOrder);
                 break;
             case PRODUCT_ID:
-                // For the PET_ID code, extract out the ID from the URI.
+                // For the PRODUCT_ID code, extract out the ID from the URI.
                 // For an example URI such as "content://com.example.android.inventoryapp/products/2",
                 // the selection will be "_id=?" and the selection argument will be a
                 // String array containing the actual ID of 3 in this case.
@@ -89,7 +89,7 @@ public class ProductProvider extends ContentProvider {
                 selection = ProductEntry._ID + "=?";
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
 
-                // This will perform a query on the pets table where the _id equals 2 to return a
+                // This will perform a query on the product table where the _id equals 2 to return a
                 // Cursor containing that row of the table.
                 cursor = db.query(ProductEntry.TABLE_NAME, projection, selection, selectionArgs,
                         null, null, sortOrder);
@@ -119,7 +119,7 @@ public class ProductProvider extends ContentProvider {
     }
 
     /**
-     * Insert a pet into the database with the given content values. Return the new content URI
+     * Insert a product into the database with the given content values. Return the new content URI
      * for that specific row in the database.
      */
     private Uri insertProduct(Uri uri, ContentValues values) {
@@ -155,7 +155,7 @@ public class ProductProvider extends ContentProvider {
             return null;
         }
 
-        // Notify all listeners that the data has changed for the pet content URI
+        // Notify all listeners that the data has changed for the product content URI
         getContext().getContentResolver().notifyChange(uri, null);
 
         // Return the new URI with the ID (of the newly inserted row) appended at the end
@@ -169,7 +169,7 @@ public class ProductProvider extends ContentProvider {
             case PRODUCTS:
                 return updateProduct(uri, contentValues, selection, selectionArgs);
             case PRODUCT_ID:
-                // For the PET_ID code, extract out the ID from the URI,
+                // For the PRODUCT_ID code, extract out the ID from the URI,
                 // so we know which row to update. Selection will be "_id=?" and selection
                 // arguments will be a String array containing the actual ID.
                 selection = ProductEntry._ID + "=?";
