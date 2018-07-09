@@ -1,6 +1,5 @@
 package com.example.android.inventoryapp;
 
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -134,15 +133,10 @@ public class ProductCursorAdapter extends CursorAdapter {
                 //Selection args claus
                 String[] selectionArgs = {itemIdArgs};
 
-                // if quantity is 0, delete the product from db
-                if (newQuantity == 0) {
-                    int rowsDeleted = context.getContentResolver().delete(ContentUris.withAppendedId(ProductEntry.CONTENT_URI, item_id), null, null);
-                } else {
-                    // update the current product
-                    int updateProduct = context.getContentResolver().update(Uri.withAppendedPath(
-                            ProductEntry.CONTENT_URI, Integer.toString(item_id)),
-                            values, selection, selectionArgs);
-                }
+                // update the current product
+                int updateProduct = context.getContentResolver().update(Uri.withAppendedPath(
+                        ProductEntry.CONTENT_URI, Integer.toString(item_id)),
+                        values, selection, selectionArgs);
             }
         });
 

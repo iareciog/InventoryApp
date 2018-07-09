@@ -44,7 +44,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/product_name_hint"
-                    android:layout_toRightOf="@id/product_name" />
+                    android:layout_toRightOf="@id/product_name"
+                    android:inputType="text"/>
 
             </RelativeLayout>
 
@@ -66,7 +67,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/product_price_hint"
-                    android:layout_toRightOf="@id/product_price" />
+                    android:layout_toRightOf="@id/product_price"
+                    android:inputType="numberDecimal"/>
 
             </RelativeLayout>
 
@@ -100,7 +102,8 @@
                     android:hint="@string/product_quantity_hint"
                     android:text="@string/default_quantity_value"
                     android:layout_toRightOf="@id/quantityAdd"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:inputType="number"/>
 
                 <ImageView
                     android:id="@+id/quantityReduce"
@@ -154,7 +157,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/supplier_name_hint"
-                    android:layout_toRightOf="@id/support_name"/>
+                    android:layout_toRightOf="@id/support_name"
+                    android:inputType="text"/>
 
             </RelativeLayout>
 
@@ -168,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/supplier_phone"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true" />
 
                 <EditText
                     style="@style/productEditText"
@@ -176,7 +180,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/supplier_phone_hint"
-                    android:layout_toRightOf="@id/support_phone"/>
+                    android:layout_toRightOf="@id/support_phone"
+                    android:inputType="phone"/>
 
             </RelativeLayout>
         </LinearLayout>
