@@ -129,8 +129,9 @@ public class ProductProvider extends ContentProvider {
             throw new IllegalArgumentException("Product requires name");
         }
 
-        // Check that the gender is valid
-        Integer price = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_PRICE);
+        // Check that the price is valid
+        Float price = values.getAsFloat(ProductEntry.COLUMN_PRODUCT_PRICE);
+
         if (price == null) {
             throw new IllegalArgumentException("Product requires price");
         }
@@ -140,8 +141,6 @@ public class ProductProvider extends ContentProvider {
         if (quantity == null) {
             throw new IllegalArgumentException("Product requires quantity");
         }
-
-        // No need to check the breed, any value is valid (including null).
 
         // Get writeable database
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
@@ -198,8 +197,9 @@ public class ProductProvider extends ContentProvider {
 
         // If the {@link ProductEntry#COLUMN_PRODUCT_PRICE} key is present,
         // check that the name value is not null.
+
         if (values.containsKey(ProductEntry.COLUMN_PRODUCT_PRICE)) {
-            Integer price = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_PRICE);
+            Float price = values.getAsFloat(ProductEntry.COLUMN_PRODUCT_PRICE);
             if (price == null) {
                 throw new IllegalArgumentException("The product requires a price");
             }

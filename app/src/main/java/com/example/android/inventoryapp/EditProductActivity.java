@@ -203,8 +203,8 @@ public class EditProductActivity extends AppCompatActivity implements
 
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_NAME, supplierNameString);
 
-        //Check if productQuantity isn't empty. And if is empty use 0 has value
-        int quantity = 0;
+        //Check if productQuantity isn't empty. And if is empty use 1 has value
+        int quantity = 1;
         if(!TextUtils.isEmpty(productQuantityString)) {
             quantity = Integer.parseInt(productQuantityString);
         }
@@ -389,14 +389,14 @@ public class EditProductActivity extends AppCompatActivity implements
 
             // Extract out the value from the Cursor for the given column index
             String productName = cursor.getString(productNameColumnIndex);
-            int productPrice = cursor.getInt(productPriceColumnIndex);
+            float productPrice = cursor.getLong(productPriceColumnIndex);
             int productQuantity = cursor.getInt(productQuantityColumnIndex);
             String supplierName = cursor.getString(supplierNameColumnIndex);
             int supplierPhone = cursor.getInt(supplierPhoneColumnIndex);
 
             // Update the views on the screen with the values from the database
             mProductNameEditText.setText(productName);
-            mProductPriceEditText.setText(Integer.toString(productPrice));
+            mProductPriceEditText.setText(Float.toString(productPrice));
             mProductQuantityEditText.setText(Integer.toString(productQuantity));
             mSupplierNameEditText.setText(supplierName);
             mSupplierPhoneEditText.setText(Integer.toString(supplierPhone));
