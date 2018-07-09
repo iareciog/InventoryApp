@@ -181,9 +181,19 @@ public class EditProductActivity extends AppCompatActivity implements
         String supplierNameString = mSupplierNameEditText.getText().toString().trim();
         String supplierPhoneString = mSupplierPhoneEditText.getText().toString().trim();
 
-        // check if the uri is null and the product name and price is empty
-        // because a name and price is needed
+        // check if the uri is null and all the values exist
+        // because all info is needed for create the product
         if (mCurrentProductUri == null &&
+                TextUtils.isEmpty(productNameString) || TextUtils.isEmpty(productPriceString) ||
+                TextUtils.isEmpty(supplierNameString) || TextUtils.isEmpty(supplierPhoneString)) {
+            Toast.makeText(this, "You need to fill all the text boxes",
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // check if the uri is null and all the values exist
+        // because all info is needed for edit the product
+        if (mCurrentProductUri != null &&
                 TextUtils.isEmpty(productNameString) || TextUtils.isEmpty(productPriceString) ||
                 TextUtils.isEmpty(supplierNameString) || TextUtils.isEmpty(supplierPhoneString)) {
             Toast.makeText(this, "You need to fill all the text boxes",
