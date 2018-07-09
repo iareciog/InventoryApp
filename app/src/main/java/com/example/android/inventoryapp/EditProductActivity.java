@@ -135,7 +135,7 @@ public class EditProductActivity extends AppCompatActivity implements
         quantityReduce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String quantityString = mProductQuantityEditText.getText().toString();
+                String quantityString = mProductQuantityEditText.getText().toString().trim();
                 int quantity;
 
                 // Check if quantityString have "" value and change to 0 if is true.
@@ -184,7 +184,7 @@ public class EditProductActivity extends AppCompatActivity implements
         // check if the uri is null and the product name and price is empty
         // because a name and price is needed
         if (mCurrentProductUri == null &&
-                TextUtils.isEmpty(productNameString) && TextUtils.isEmpty(productPriceString)) {
+                TextUtils.isEmpty(productNameString) || TextUtils.isEmpty(productPriceString)) {
             Toast.makeText(this, "The product need name and price",
                     Toast.LENGTH_LONG).show();
             return;
@@ -192,10 +192,25 @@ public class EditProductActivity extends AppCompatActivity implements
 
         // Create contentValues to put the values for the database
         ContentValues values = new ContentValues();
-        values.put(ProductEntry.COLUMN_PRODUCT_NAME, productNameString);
-        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, productPriceString);
-        values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_NAME, supplierNameString);
 
+        String productName = "";
+        if(!TextUtils.isEmpty(productNameString)){
+            productName = productNameString;
+        }
+        values.put(ProductEntry.COLUMN_PRODUCT_NAME, productName);
+
+        /*int price = 1;
+        if(!TextUtils.isEmpty(productPriceString)){
+            price = Integer.parseInt(productPriceString);
+        } else {
+            Toast.makeText(this, "The product doesn't have price",
+                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "using ",
+                    Toast.LENGTH_SHORT).show();
+        }*/
+        values.put(ProductEntry.COLUMN_PRODUCT_PRICE, productPriceString);
+
+        values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_NAME, supplierNameString);
 
         //Check if productQuantity isn't empty. And if is empty use 0 has value
         int quantity = 0;

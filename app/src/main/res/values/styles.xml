@@ -31,6 +31,7 @@
     <style name="productEditText">
         <item name="android:textSize">@dimen/product_edit_view_text_size</item>
         <item name="android:paddingLeft">@dimen/edit_text_padding_left</item>
+        <item name="android:maxLines">1</item>
     </style>
 
 </resources>

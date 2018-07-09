@@ -44,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/product_name_hint"
-                    android:layout_toRightOf="@id/product_name"/>
+                    android:layout_toRightOf="@id/product_name" />
 
             </RelativeLayout>
 
