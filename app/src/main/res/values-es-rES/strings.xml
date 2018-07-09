@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Inventario</string>
+    <string name="insert_data">Insertar datos de prueba</string>
+    <string name="show_db">Mostrar BD</string>
+    <string name="this_table_contains">La tabla productos contiene</string>
+    <string name="products">productos.</string>
+    <string name="empty_view_title_text">El Inventario esta Vacio</string>
+    <string name="empty_view_subtitle_text">Para añadir un producto pulse el botón.</string>
+    <string name="action_insert_dummy_data">Insertar datos de prueba</string>
+    <string name="action_delete_all_entries">Borrar todas las entradas</string>
+    <string name="action_save">Guardar producto</string>
+    <string name="action_delete">Eliminar producto</string>
+    <string name="edit_product_title_new_product">Añadir un producto</string>
+    <string name="edit_product_title_edit_product">Editar un producto</string>
+    <string name="product_info_subcategory">Info del producto</string>
+    <string name="supplier_info_subcategory">Info del proveedor</string>
+    <string name="product_name_hint">Nombre del Producto</string>
+    <string name="product_price_hint">Precio</string>
+    <string name="product_quantity_hint">Cantidad</string>
+    <string name="product_and_supplier_name">Nombre:</string>
+    <string name="product_price">Precio:</string>
+    <string name="product_quantity">Cantidad:</string>
+    <string name="supplier_phone">Telefono:</string>
+    <string name="supplier_name_hint">Nombre del Proveedor</string>
+    <string name="supplier_phone_hint">Telefono del Proveedor</string>
+    <string name="call_the_supplier">Llamar al proveedor</string>
+</resources>
