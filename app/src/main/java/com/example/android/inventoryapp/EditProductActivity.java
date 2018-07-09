@@ -199,15 +199,6 @@ public class EditProductActivity extends AppCompatActivity implements
         }
         values.put(ProductEntry.COLUMN_PRODUCT_NAME, productName);
 
-        /*int price = 1;
-        if(!TextUtils.isEmpty(productPriceString)){
-            price = Integer.parseInt(productPriceString);
-        } else {
-            Toast.makeText(this, "The product doesn't have price",
-                    Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "using ",
-                    Toast.LENGTH_SHORT).show();
-        }*/
         values.put(ProductEntry.COLUMN_PRODUCT_PRICE, productPriceString);
 
         values.put(ProductEntry.COLUMN_PRODUCT_SUPPLIER_NAME, supplierNameString);
